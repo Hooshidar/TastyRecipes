@@ -1,0 +1,148 @@
+body{
+    background-color: #efefef;
+    color: #000305;
+    font-size: 87.5%;
+    font-family: Arial, 'lucida sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:link, a:visited{
+    color: #CF5C3F;
+}
+
+a:hover, a:active{
+    background-color: #CF5C3F;
+    color: #fafafa;
+}
+
+.body{
+    margin: 0 auto;
+    width: 70%;
+    clear: both;
+}
+
+.mainheader img{
+    width: 30%;
+    height: auto;
+    margin: 2% 0;
+}
+
+.mainheader nav{
+    background-color: #666;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.mainheader nav ul{
+    list-style: none;
+    margin: 0 auto;
+}
+
+.mainheader nav ul li{
+    float: left;
+    display: inline;
+}
+
+.mainheader nav a:link, .mainheader nav a:visited{
+    color: #fafafa;
+    display: inline-block;
+    padding: 10px 25px;
+    height: 20px;
+}
+
+.mainheader nav a:hover, .mainheader nav a:active{
+    background-color: #CF5C3F;
+    text-shadow: none;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+}
+ 
+.mainheader nav .active a:link, .mainheader nav .active a:visited{
+    background-color: #4a4a4a;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.mainheader nav ul li a{
+    border-radius: 5px;
+}
+
+.maincontent{
+    line-height: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.topcontent{
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1% 3%;
+    margin-top: 1%;
+    margin-right: 2%;
+    float: left;
+    width: 23%;
+}
+
+.nextcontent{
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1% 3%;
+    margin-top: 1%;
+    float: left;
+    width: 63%
+}
+
+.thirdcontent{
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1% 3%;
+    margin-top: 1%;
+    float: left;
+    width: 94%
+}
+
+@media only screen and (min-width: 150px) and (max-width: 768px)
+{
+    
+    .body{
+        width: 90%;
+        font-size: 95%;
+    }
+    .mainheader img{
+        width: 100%;
+    }
+    
+    .mainheader nav{
+        height: 160px;
+    }
+
+    .mainheader nav ul{
+        padding-left: 0;
+    }
+
+    .mainheader nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainheader nav a:link, .mainheader nav a:visited{
+        padding: 10px 25px;
+        height: 20px;
+        display: block;
+    }
+    
+    .topcontent{
+        float: none;
+        width: 94%;
+    }
+
+    .nextcontent{
+        float: none;
+        width: 94%;
+    }
+    
+}
