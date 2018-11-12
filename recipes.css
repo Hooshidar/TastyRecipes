@@ -54,10 +54,12 @@ a:hover, a:active{
 }
 
 .mainheader nav ul li form input{
-    background: #fafafa;
-    border: none;
+    background: #666;
+    border-top: 1px solid #fafafa;
+    border-bottom: 1px solid #fafafa;
+    border-right: 1px solid #fafafa; 
     border-left: 5px solid #CF5C3F;
-    color: #666;
+    color: #fafafa;
     border-radius: 5px;
     margin-left: 5px;
     text-align: left;

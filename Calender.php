@@ -27,11 +27,11 @@
             <li><form action="login.php" method="POST">
                     <input type="text" name="username" placeholder="Username">
                     <input type="password" name="pwd" placeholder="Password">
-                    <button type="submit">LOGIN</button>
+                    <button type="submit">Login</button>
                 </form>
                 
-                <form action="loginpage.php" method="POST"><button type="submit">SIGNUP</button></form>
-                <form action="logout.php" method="POST"><button type="submit">LOGOUT</button></form>
+                <form action="loginpage.php" method="POST"><button type="submit">Signup</button></form>
+                <form action="logout.php" method="POST"><button type="submit">Logout</button></form>
             </li>
          </ul>
      </nav>
