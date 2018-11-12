@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -15,10 +18,21 @@
      
      <nav>
          <ul>
-             <li><a href="index.html">Home</a></li>
-             <li><a href="Recipes.html">Recipes</a></li>
-             <li class="active"><a href="Calender.html">Calendar</a></li>
-             <li><a href="About.html">About</a></li>
+             <li><a href="index.php">Home</a></li>
+             <li><a href="Recipes.php">Recipes</a></li>
+             <li class="active"><a href="Calender.php">Calendar</a></li>
+             <li><a href="About.php">About</a></li>
+         </ul>
+         <ul>
+            <li><form action="login.php" method="POST">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="pwd" placeholder="Password">
+                    <button type="submit">LOGIN</button>
+                </form>
+                
+                <form action="loginpage.php" method="POST"><button type="submit">SIGNUP</button></form>
+                <form action="logout.php" method="POST"><button type="submit">LOGOUT</button></form>
+            </li>
          </ul>
      </nav>
          
@@ -74,7 +88,7 @@
                             </li>
                             <li class="day">
                                 <div class="date">8</div>
-                                <a href="Pancakes.html"><img src="img/pancake.gif" alt="Pancakes"></a>
+                                <a href="Pancakes.php"><img src="img/pancake.gif" alt="Pancakes"></a>
                             </li>
                             <li class="day">
                                 <div class="date">9</div>
@@ -115,7 +129,7 @@
                             </li>
                             <li class="day">
                                 <div class="date">20</div>
-                                <a href="Meatballs.html"><img src="img/meatballs.gif" alt="Meatballs"></a>
+                                <a href="Meatballs.php"><img src="img/meatballs.gif" alt="Meatballs"></a>
                             </li>
                             <li class="day">
                                 <div class="date">21</div>
