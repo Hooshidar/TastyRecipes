@@ -43,9 +43,38 @@ a:hover, a:active{
     margin: 0 auto;
 }
 
-.mainheader nav ul li{
+.mainheader nav ul li a{
     float: left;
     display: inline;
+}
+
+.mainheader nav ul li form{
+    float: right;
+    display: inline;
+}
+
+.mainheader nav ul li form input{
+    background: #fafafa;
+    border: none;
+    border-left: 5px solid #CF5C3F;
+    color: #666;
+    border-radius: 5px;
+    margin-left: 5px;
+    text-align: left;
+    display: inline;
+}
+
+.mainheader nav ul li form button{
+    padding: 12.5px;
+    background: #fafafa;
+    border: none;
+    color: #666;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+    cursor: pointer;
+    
 }
 
 .mainheader nav a:link, .mainheader nav a:visited{
