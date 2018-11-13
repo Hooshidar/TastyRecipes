@@ -33,14 +33,17 @@
              <li><a href="About.php">About</a></li>
          </ul>
          <ul>
-            <li><form action="login.php" method="POST">
-                    <input type="text" name="username" placeholder="Username">
-                    <input type="password" name="pwd" placeholder="Password">
-                    <button type="submit">Login</button>
+            <li><form action="includes/login.inc.php" method="POST">
+                    <input type="text" name="username" placeholder="Username...">
+                    <input type="password" name="pwd" placeholder="Password...">
+                    <button type="submit" name="login-submit">Login</button>
                 </form>
-                
-                <form action="loginpage.php" method="POST"><button type="submit">Signup</button></form>
-                <form action="logout.php" method="POST"><button type="submit">Logout</button></form>
+                <form action="Signuppage.php" method="POST">
+                    <button type="submit">Signup</button>
+                </form>
+                <form action="includes/logout.inc.php" method="POST">
+                    <button type="submit" name="logout-submit">Logout</button>
+                </form>
             </li>
          </ul>
      </nav>
