@@ -318,7 +318,7 @@ textarea{
     border-color: #Cf5C3f;
 }
 
-.signupcontent form button{
+.signupcontent button{
     display: block;
     height: 35px;
     width: 10%;
@@ -327,7 +327,7 @@ textarea{
     border-style: none;
     color: #fafafa;
     background-color: #Cf5C3f;
-    
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 150px) and (max-width: 768px)
