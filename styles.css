@@ -54,12 +54,11 @@ a:hover, a:active{
 }
 
 .mainheader nav ul li form input{
-    background: #666;
-    border-top: 1px solid #fafafa;
-    border-bottom: 1px solid #fafafa;
-    border-right: 1px solid #fafafa; 
+    background: #fafafa;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    border-right: 1px solid #666; 
     border-left: 5px solid #CF5C3F;
-    color: #fafafa;
     border-radius: 5px;
     margin-left: 5px;
     text-align: left;
@@ -67,16 +66,15 @@ a:hover, a:active{
 }
 
 .mainheader nav ul li form button{
-    padding: 12.5px;
-    background: #666;
-    border: none;
-    color: #fafafa;
-    border-radius: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    text-align: center;
-    cursor: pointer;
-    
+	padding: 0px 25px;
+	height: 40px;
+	border: none;
+	color: #fafafa;
+	background-color: #666;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .mainheader nav a:link, .mainheader nav a:visited{

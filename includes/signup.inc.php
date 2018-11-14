@@ -8,9 +8,9 @@ if (isset($_POST['signup-submit'])){
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwd-repeat'];
     
-    /* Kollar om något av fälten är tomma, isåfall skickas man tillbaka till signuppage.php och den info som skrevs sparas i fältet (förutom password) */
+    /* Kollar om något av fälten är tomma, isåfall skickas man tillbaka till signuppage.php och den info som skrevs visas i adressfältet (förutom password) */
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
-        header("Location: ../Signuppage.php?error=emtyfields&uid=".$username."&mail=".$email);
+        header("Location: ../Signuppage.php?error=emptyfields&uid=".$username."&mail=".$email);
         exit();
     } 
     /* Ser till så att formatet på mailet är korrekt samt om de används de tllåtna tecken nedan.*/
@@ -63,7 +63,9 @@ if (isset($_POST['signup-submit'])){
                 }
                 /* om du tagit dig hit har du klarat alla prövningar. Här läggs informationen in i databasen*/
                 else {
-                    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $password);
+					$hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+					
+                    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../Signuppage.php?signup=success");
                     exit();
