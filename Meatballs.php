@@ -1,5 +1,8 @@
 <?php
     require "Header.php";
+	date_default_timezone_set('Europe/Stockholm');
+	include 'includes/dbhLogin.inc.php';
+	include 'includes/comments.inc.php';
 ?>
 
      <div class="maincontent">
@@ -63,10 +66,14 @@
                     <h2><a href="#" title="third post">User comments:</a></h2>
                 </header>
                     <?php
-                    if (isset($_SESSION['id'])){
+					/*$sql = "SELECT * FROM users WHERE idUsers=$id;";
+					$result = mysqli_query($conn, $sql);*/
+					
+					
+                    if (isset($_SESSION['userId'])){
                         echo "<form method='POST' action='".setComments($conn)."'>
-                            <input type='hidden' name='uid' value='".$_SESSION['id']."'>
-                            <input type='hidden' name='dates' value='".date('Y-m-d H:i:s')."'>
+                            <input type='hidden' name='uid' value='".$_SESSION['userUid']."'>
+                            <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                             <textarea name='message'></textarea>
                             <button type='submit' name='commentSubmit'>Comment</button>
                         </form>";
