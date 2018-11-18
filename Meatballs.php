@@ -71,7 +71,8 @@
 					
 					
                     if (isset($_SESSION['userId'])){
-                        echo "<form method='POST' action='".setComments($conn)."'>
+                        echo 							
+						"<form method='POST' action='includes/setComments.inc.php'>
                             <input type='hidden' name='uid' value='".$_SESSION['userUid']."'>
                             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                             <textarea name='message'></textarea>
@@ -81,7 +82,7 @@
                         echo "Login to comment!";
                     }
                         
-                    getComments($conn);
+                    require 'includes/getComments.inc.php';
                     ?>
             </article>
      </div>
