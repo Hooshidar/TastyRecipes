@@ -2,7 +2,6 @@
     require "Header.php";
 	date_default_timezone_set('Europe/Stockholm');
 	include 'includes/dbhLogin.inc.php';
-	include 'includes/comments.inc.php';
 ?>
 
      <div class="maincontent">
