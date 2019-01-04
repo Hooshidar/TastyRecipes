@@ -39,7 +39,7 @@
                             {{ csrf_field() }}
 
                             <div>
-                                <textarea type="Text" name="comment" placeholder="Write comment"></textarea>
+                                <textarea type="Text" name="comment" placeholder="Write comment" required></textarea>
                             </div>
 
 

@@ -63,10 +63,10 @@
 
                         <form method="POST" action="/recipes/meatballs">
 
-                            {{ csrf_field() }}
+                            @csrf
 
                             <div>
-                                <textarea type="Text" name="comment" placeholder="Write comment"></textarea>
+                                <textarea type="Text" name="comment" placeholder="Write comment" required></textarea>
                             </div>
 
 

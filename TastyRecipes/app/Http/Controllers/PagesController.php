@@ -33,13 +33,15 @@ class PagesController extends Controller
 
     public function storePancakes(){
 
-    	$comment = new Comment();
+    	request()->validate([
+    		'comment' => 'required'
+    	]);
 
-    	$comment->cid = 1;
-    	$comment->username = 'Admin';
-    	$comment->text = request('comment');
-
-    	$comment->save();
+    	Comment::create([
+    		'cid' => 1, 
+    		'username' => 'admin', 
+    		'text' => request('comment')
+    	]);
 
     	return redirect('/recipes/pancakes');
 
@@ -59,13 +61,15 @@ class PagesController extends Controller
 
     public function storeMeatballs(){
 
-    	$comment = new Comment();
+    	request()->validate([
+    		'comment' => 'required'
+    	]);
 
-    	$comment->cid = 2;
-    	$comment->username = 'Admin';
-    	$comment->text = request('comment');
-
-    	$comment->save();
+    	Comment::create([
+    		'cid' => 2, 
+    		'username' => 'admin', 
+    		'text' => request('comment')
+    	]);
 
     	return redirect('/recipes/meatballs');
 
