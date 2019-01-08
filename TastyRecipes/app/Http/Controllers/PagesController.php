@@ -39,7 +39,7 @@ class PagesController extends Controller
 
     	Comment::create([
     		'cid' => 1, 
-    		'username' => 'admin', 
+    		'username' => auth()->user()->name, 
     		'text' => request('comment')
     	]);
 
@@ -66,8 +66,8 @@ class PagesController extends Controller
     	]);
 
     	Comment::create([
-    		'cid' => 2, 
-    		'username' => 'admin', 
+    		'cid' => 2,
+            'username' => auth()->user()->name,
     		'text' => request('comment')
     	]);
 

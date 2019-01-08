@@ -313,7 +313,7 @@ textarea{
 .signupcontent form input{
     display: block;
     width: 30%;
-    height: 30px;
+    height: 15px;
     padding: 5px;
     text-align: left;
     margin-left: auto;
@@ -328,7 +328,7 @@ textarea{
 .signupcontent button{
     display: block;
     height: 35px;
-    width: 10%;
+    width: 60px;
     margin: auto;
     border-radius: 5px;
     border-style: none;

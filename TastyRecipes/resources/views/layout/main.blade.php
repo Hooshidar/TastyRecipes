@@ -15,14 +15,12 @@
                  
              <img src="{{ URL::asset('img/logo.gif') }}""img/logo.gif" alt="toplogo">
         		 
-        	 <?php
-        	 	 if (isset($_SESSION['name'])){
-        			 echo '<p class="login-status">{{ Auth::user()->name }}</p>';
-        		 }	 
-        		 else {
-        			 echo'<p class="login-status">You are logged out!</p>';
-        		 }
-        	 ?>
+        	 	 @if(auth()->check())
+        			 <p class="login-status">{{ Auth::user()->name }}</p>
+        		 @else
+        			 <p class="login-status">You are logged out!</p>
+        		 @endif
+
              
            
              <nav>

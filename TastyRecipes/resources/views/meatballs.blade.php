@@ -61,6 +61,7 @@
                 <header>
                     <h2><a href="#" title="third post">User comments:</a></h2>
 
+                    @if(auth()->check())
                         <form method="POST" action="/recipes/meatballs">
 
                             @csrf
@@ -74,7 +75,7 @@
                                 <button type="submit">Comment</button>
                             </div>
                         </form>
-
+                    @endif
 
 
                         @foreach($comments as $comment)
@@ -87,11 +88,16 @@
                                     <br>
                                     {{ $comment->created_at }}
                                 </p>
+                            @if(auth()->check())
+                            @if($comment->username == auth()->user()->name)
                                 <form class="delete-form" method="POST" action="/recipes/meatballs/{{ $comment->id }}">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" name="commentDelete">Delete</button>
                                 </form>
+                            @endif
+                            @endif
+                            
                                 </div>
                             @endif
                         @endforeach
