@@ -15,7 +15,7 @@ Route::get('/', 'PagesController@home');
 
 Route::get('/recipes', 'PagesController@recipes');
 
-Route::get('/calendar', 'PagesController@calendar');
+Route::get('/calendar', 'PagesController@calendar')->middleware('auth');
 
 Route::get('/about', 'PagesController@about');
 
@@ -28,3 +28,6 @@ Route::post('/recipes/meatballs', 'PagesController@storeMeatballs');
 Route::delete('/recipes/meatballs/{id}', 'PagesController@destroyMeatballs');
 
 //Route::get('/comments','CommentsController@meatballs');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -48,6 +48,12 @@ a:hover, a:active{
     display: inline;
 }
 
+.login{
+    float: right;
+    display: inline;
+}
+
+/*
 .mainheader nav ul li form{
     float: right;
     display: inline;
@@ -76,7 +82,7 @@ a:hover, a:active{
 	border-radius: 5px;
 	cursor: pointer;
 	margin: 0px;
-}
+}*/
 
 .mainheader nav a:link, .mainheader nav a:visited{
     color: #fafafa;

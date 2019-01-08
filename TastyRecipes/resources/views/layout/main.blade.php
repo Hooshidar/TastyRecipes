@@ -16,8 +16,8 @@
              <img src="{{ URL::asset('img/logo.gif') }}""img/logo.gif" alt="toplogo">
         		 
         	 <?php
-        	 	 if (isset($_SESSION['userId'])){
-        			 echo '<p class="login-status">You are logged in!</p>';
+        	 	 if (isset($_SESSION['name'])){
+        			 echo '<p class="login-status">{{ Auth::user()->name }}</p>';
         		 }	 
         		 else {
         			 echo'<p class="login-status">You are logged out!</p>';
@@ -31,27 +31,25 @@
                      <li><a href="/recipes">Recipes</a></li>
                      <li><a href="/calendar">Calender</a></li>
                      <li><a href="/about">About</a></li>
-        			 <li>
-        				 <?php
-        				 if (isset($_SESSION['userId'])){
-        					 echo '<form action="includes/logout.inc.php" method="POST">
-                            <button type="submit" name="logout-submit">Logout</button>
-                         	</form>';
-        				 }	 
-        				 else {
-        					 echo'<form action="includes/login.inc.php" method="POST">
-                            <input type="text" name="mailuid" placeholder="Username...">
-                            <input type="password" name="pwd" placeholder="Password...">
-                            <button type="submit" name="login-submit">Login</button>
-        					</form>
-                         	<form action="Signuppage.php" method="POST">
-                            <button type="submit">Signup</button>
-        					</form>';
-        				 }
-        				 
-        				?>
-        				 
-                         
+                     <li>
+                            @if (Route::has('login'))
+                                <div class="login">
+                                    @auth
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            @else
+                                        <a href="{{ route('login') }}">Login</a>
+
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}">Register</a>
+                                        @endif
+                                    @endauth
+                                </div>
+                            @endif
                      </li>
                  </ul>
              </nav>

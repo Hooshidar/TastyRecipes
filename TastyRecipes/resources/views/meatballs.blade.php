@@ -84,6 +84,8 @@
                                     {{ $comment->username }}
                                     <br>
                                     {{ $comment->text }}
+                                    <br>
+                                    {{ $comment->created_at }}
                                 </p>
                                 <form class="delete-form" method="POST" action="/recipes/meatballs/{{ $comment->id }}">
                                     @method('DELETE')
