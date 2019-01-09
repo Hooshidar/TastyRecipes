@@ -19,13 +19,9 @@ Route::get('/calendar', 'PagesController@calendar')->middleware('auth');
 
 Route::get('/about', 'PagesController@about');
 
-Route::get('/recipes/pancakes', 'PagesController@pancakes');
-Route::post('/recipes/pancakes', 'PagesController@storePancakes');
-Route::delete('/recipes/pancakes/{id}', 'PagesController@destroyPancakes');
-
-Route::get('/recipes/meatballs', 'PagesController@meatballs');
-Route::post('/recipes/meatballs', 'PagesController@storeMeatballs');
-Route::delete('/recipes/meatballs/{id}', 'PagesController@destroyMeatballs');
+Route::get('/recipe/{recipe}', 'RecipeController@show');
+Route::post('/recipe/{recipe}', 'RecipeController@store');
+Route::delete('/recipe/{recipe}/{id}', 'RecipeController@destroy');
 
 //Route::get('/comments','CommentsController@meatballs');
 Auth::routes();
