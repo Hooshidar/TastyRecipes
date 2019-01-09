@@ -1,7 +1,4 @@
-<?php
-    require "Header.php";
-?>
- 
+
      <div class="maincontent">
         <div class="content">
             <article class="topcontent">
@@ -15,6 +12,3 @@
         </div>
      </div>
      
-<?php
-    require "Footer.php";
-?>
