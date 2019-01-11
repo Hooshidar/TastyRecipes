@@ -15,26 +15,26 @@ class RecipeController extends Controller
         return view('/recipe/showrecipe', compact('recipes', 'comments'));
     }
 
-    public function store($recipe){
+    // public function store($recipe){
    
-    	request()->validate([
-    		'comment' => 'required'
-    	]);
+    // 	request()->validate([
+    // 		'comment' => 'required'
+    // 	]);
 
-    	Comment::create([
-    		'cid' => $recipe, 
-    		'username' => auth()->user()->name, 
-    		'text' => request('comment')
-    	]);
+    // 	Comment::create([
+    // 		'cid' => $recipe, 
+    // 		'username' => auth()->user()->name, 
+    // 		'text' => request('comment')
+    // 	]);
 
-    	return redirect('/recipe/'.$recipe);
-    }
+    // 	return redirect('/recipe/'.$recipe);
+    // }
 
-    public function destroy($recipe, $id){
+    // public function destroy($recipe, $id){
 
-    	Comment::findOrFail($id)->delete();
+    // 	Comment::findOrFail($id)->delete();
 
-        return redirect('/recipe/'.$recipe);
-    }
+    //     return redirect('/recipe/'.$recipe);
+    // }
   
 }

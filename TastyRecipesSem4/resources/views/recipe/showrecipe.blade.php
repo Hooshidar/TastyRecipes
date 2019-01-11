@@ -39,18 +39,22 @@
                             </div>
                     @endif
 
+                        <ul id="showComments">
+                            
 
+                        </ul>
                         @foreach($comments as $comment)
                         <input type="hidden" name="recipeId" id="commentId" value="{{ $comment->id }}">
                             @if($comment->cid == $recipes->id)
                                 <div class="commentBox">
-                                <p>
+
+                                <!-- <p>
                                     {{ $comment->username }}
                                     <br>
                                     {{ $comment->text }}
                                     <br>
                                     {{ $comment->created_at }}
-                                </p>
+                                </p> -->
                             @if(auth()->check())
                             @if($comment->username == auth()->user()->name)
                                     <button type="submit" id="deleteComment">Delete</button>
@@ -105,6 +109,21 @@
                                     },
                                     success: function(result){
                                         console.log(result);
+                                    }
+                                });
+                            });
+
+                            jQuery(function(){
+
+                                var $showComments = $('#showComments')
+
+                                jQuery.ajax({
+                                    type: 'get',
+                                    url: "{{ url('showComment') }}",
+                                    success: function(showComments){
+                                        jQuery.each(showComments, function(i, showComment){
+                                            $showComments.append('<li>comments</li>');
+                                        });
                                     }
                                 });
                             });
