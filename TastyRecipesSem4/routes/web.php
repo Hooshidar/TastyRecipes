@@ -19,9 +19,14 @@ Route::get('/calendar', 'PagesController@calendar')->middleware('auth');
 
 Route::get('/about', 'PagesController@about');
 
-Route::get('/recipe/{recipe}', 'RecipeController@show');
-Route::post('/recipe/{recipe}', 'RecipeController@store');
-Route::delete('/recipe/{recipe}/{id}', 'RecipeController@destroy');
+// Route::get('/recipe/{recipe}', 'RecipeController@show');
+// Route::post('/recipe/{recipe}', 'RecipeController@store');
+// Route::delete('/recipe/{recipe}/{id}', 'RecipeController@destroy');
+
+Route::get('/recipe/{recipe}', 'CommentsController@showComment');
+Route::post('storeComment', 'CommentsController@storeComment');
+Route::post('deleteComment', 'CommentsController@deleteComment');
+
 
 //Route::get('/comments','CommentsController@meatballs');
 Auth::routes();
