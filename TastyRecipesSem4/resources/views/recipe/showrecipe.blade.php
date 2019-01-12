@@ -5,7 +5,9 @@
         var recipeId = '{{ $recipes->id }}';
         var csrf_field = '{{ csrf_field() }}';
         var logged_in = '{{ Auth::check() }}';
-        var user_name = '{{ Auth::user()->name }}';
+        @if (Auth::check()) 
+            var user_name = '{{ Auth::user()->name }}';
+        @endif
     </script>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">

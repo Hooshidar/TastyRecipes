@@ -11,9 +11,9 @@
                 
                 </h2>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" id="loginForm" action="{{ route('login') }}">
                         @csrf
-
+                        <label class="alert alert-danger" id="errorMsg"></label>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -73,4 +73,5 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{ URL::asset('js/login.js') }}"></script>
 @endsection

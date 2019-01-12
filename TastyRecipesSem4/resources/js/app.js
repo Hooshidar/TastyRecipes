@@ -7,6 +7,14 @@
 
 require('./bootstrap');
 
+
+require('./bootstrap');
+
+import 'jquery-validation/dist/jquery.validate.min.js';
+
+require('./login');
+
+
 window.Vue = require('vue');
 
 /**

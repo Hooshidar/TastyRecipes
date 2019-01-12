@@ -51,7 +51,7 @@
                             </li>
                             <li class="day">
                                 <div class="date">8</div>
-                                <a href="Pancakes.php"><img src="img/pancake.gif" alt="Pancakes"></a>
+                                <a href="/recipe/3"><img src="img/pancake.gif" alt="Pancakes"></a>
                             </li>
                             <li class="day">
                                 <div class="date">9</div>
@@ -92,7 +92,7 @@
                             </li>
                             <li class="day">
                                 <div class="date">20</div>
-                                <a href="Meatballs.php"><img src="img/meatballs.gif" alt="Meatballs"></a>
+                                <a href="/recipe/1"><img src="img/meatballs.gif" alt="Meatballs"></a>
                             </li>
                             <li class="day">
                                 <div class="date">21</div>

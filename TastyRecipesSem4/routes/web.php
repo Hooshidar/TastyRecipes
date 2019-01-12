@@ -28,6 +28,13 @@ Route::post('/comment/destroy/{recipe}', 'CommentsController@destroy');
 Route::post('/comment/store/{recipe}', 'CommentsController@store');
 
 
+Route::group(['middleware' => ['api']], function () {
+    Route::post('/validate/user', [
+        'uses' => 'Validation\UserController@user',
+    ]);
+});
+
+
 //Route::get('/comments','CommentsController@meatballs');
 Auth::routes();
 
