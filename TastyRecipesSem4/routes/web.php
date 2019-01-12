@@ -23,9 +23,9 @@ Route::get('/recipe/{recipe}', 'RecipeController@show');
 // Route::post('/recipe/{recipe}', 'RecipeController@store');
 // Route::delete('/recipe/{recipe}/{id}', 'RecipeController@destroy');
 
-Route::get('showComment}', 'CommentsController@showComment');
-Route::post('storeComment', 'CommentsController@storeComment');
-Route::post('deleteComment', 'CommentsController@deleteComment');
+Route::get('/comments', 'CommentsController@index');
+Route::post('/comment/destroy/{recipe}', 'CommentsController@destroy');
+Route::post('/comment/store/{recipe}', 'CommentsController@store');
 
 
 //Route::get('/comments','CommentsController@meatballs');

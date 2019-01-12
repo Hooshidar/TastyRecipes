@@ -5,27 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Recipe;
+use Illuminate\Support\Facades\DB;
+use Auth;
+use Sessions;
 
 class CommentsController extends Controller
 {
-    public function showComment(){
-    	Comment:All();
-    	return response()->json();
+    public function index(Request $request){
+
+        $recipe = $request->recipe;
+        $comments = DB::table('comments')->where('cid', $recipe)->latest()->get();
+
+        return json_encode($comments);
     }
 
-    public function storeComment(Request $request){
+    public function store(Request $request, $recipe){
 
-    	$comment = new Comment();
-    	$comment->cid = $request->id;
-    	$comment->username = auth()->user()->name;
-    	$comment->text = $request->text;
+        $validator = $this->validate(request(), [
+            'text' => 'required'
+        ]);
 
-    	$comment->save();
-    	return response()->json(['success'=>'Data is successfully added']);
+        //if($validator == null || $validator->passes()){
+        	$comment = new Comment();
+        	$comment->cid = $recipe;
+        	$comment->username = auth()->user()->name;
+        	$comment->text = $request->text;
+
+        	$comment->save();
+        	return response()->json(['success'=>$comment]);
+        //}
+        //return json_encode($validator->errors()->all());
     }
 
-    public function deleteComment(Request $request){
-    	Comment::findOrFail($request->id)->delete();
+    public function destroy(Request $reguest, $recipe){
+    	DB::table('comments')->where('id', '=', request("comment_id"))->delete();
 
         return response()->json();
     }

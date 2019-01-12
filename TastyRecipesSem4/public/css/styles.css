@@ -166,7 +166,7 @@ a:hover, a:active{
 
 textarea{
     width: 99%;
-    height: 25%;
+    height: 20%;
     background-color: #fff;
     resize: none;
 }
@@ -183,7 +183,7 @@ textarea{
     margin-bottom: 8px;
 }
 
-.commentBox{
+.comment{
     width: 96%;
     padding: 2%;
     margin-bottom: 6px;
@@ -191,7 +191,7 @@ textarea{
     border-radius: 5px;
 }
 
-.commentBox p{
+.comment div{
     font-family: arial;
     font-size: 14px;
     line-height: 16px;
@@ -201,6 +201,8 @@ textarea{
 
 .delete-form button{
     opacity: 0.7;
+    float: right;
+    display: block;
 }
 
 .delete-form button:hover{
